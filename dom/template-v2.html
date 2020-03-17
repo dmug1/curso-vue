@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Vue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" href="css/style.css"> -->
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-on:input="alterarTitulo">
+        <p>{{ titulo }}</p>
+        <p>{{ saudacao() }}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Usando Vue JS!'
+            },
+            /*methods: {
+            alterarTitulo(event){
+                this.titulo = event.target.value
+            }
+            }*/
+            methods: {
+                saudacao: function () {
+                    return "ola malaquias"
+                }
+            }
+        })
+    </script>
+
+
+</body>
+</html>
