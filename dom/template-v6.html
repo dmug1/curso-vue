@@ -4,7 +4,7 @@
 <head>
   <title>Vue</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--<link rel="stylesheet" href="css/style.css"> -->
+  <link rel="stylesheet" href="app.css">
   <!-- development version, includes helpful console warnings -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
@@ -12,16 +12,22 @@
 
 <body>
     <div id="app">
-        <input type="text" v-on:input="alterarTitulo">
         <p>{{ titulo }}</p>
-        <p>{{ saudacao() }}</p>
+        <p c3r-bind="abc">{{ saudacao() }}</p>
+        <a v-bind:href='link'>Google</a>
+        <hr>
+        <p v-html="linkHtml"></p>
     </div>
+
+
 
     <script>
         new Vue({
             el: '#app',
             data: {
-                titulo: 'Usando Vue JS!'
+                titulo: 'Usando Vue JS!',
+                link: 'http://imugnae.com',
+                linkHtml: '<a href="http://google.com" target="_blank"> Google</a>'
             },
             /*methods: {
             alterarTitulo(event){
@@ -30,10 +36,8 @@
             }*/
             methods: {
                 saudacao: function () {
-                    return "ola malaquias"
-                },
-                numeroRandom: function () {
-                    return Math.random()
+                    this.titulo = 'Bom dia!!!'
+                    return this.titulo
                 }
             }
         })

@@ -12,16 +12,19 @@
 
 <body>
     <div id="app">
-        <input type="text" v-on:input="alterarTitulo">
         <p>{{ titulo }}</p>
-        <p>{{ saudacao() }}</p>
+        <p c3r-bind="abc">{{ saudacao() }}</p>
+        <a v-bind:href='link'>Google</a>
     </div>
+
+
 
     <script>
         new Vue({
             el: '#app',
             data: {
-                titulo: 'Usando Vue JS!'
+                titulo: 'Usando Vue JS!',
+                link: 'http://imugnae.com'
             },
             /*methods: {
             alterarTitulo(event){
@@ -30,10 +33,8 @@
             }*/
             methods: {
                 saudacao: function () {
-                    return "ola malaquias"
-                },
-                numeroRandom: function () {
-                    return Math.random()
+                    this.titulo = 'Bom dia!!!'
+                    return this.titulo
                 }
             }
         })
