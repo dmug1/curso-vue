@@ -3,7 +3,7 @@ new Vue ({
     data: {
         nome:  'Diego',
         idade: 30,
-        imgGato: src="_MG_9330.jpg"
+        imgGato: "_MG_9330.jpg"
     },
     methods: {
         multiplicar: function(){
@@ -13,8 +13,5 @@ new Vue ({
         numeroRandom: function () {
             return Math.floor(Math.random() * Math.floor(2));
         },   
-        alterarTitulo(){
-           event.target.value =  this.nome
-        }
     }
 })
