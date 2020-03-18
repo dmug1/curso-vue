@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Vue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" href="css/style.css"> -->
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <p>{{ contador }}</p>
+        <button v-on:click="somar(5)">Somar 1 </button>
+         <p v-on:mousemove="atualizarXY">
+             Mouse: {{ x }} e {{ y }}
+             <span v-on:mousemove.stop>Parar aqui!!</span>
+         </p>
+         <a v-on:click.prevent href="http://www.imugnae.com">Meu site</a>
+        <hr>
+        <input type="text" v-on:keyup.enter="exibirAlerta">
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0,
+            },
+            methods: {
+                somar(passo) {
+                    this.contador += passo;
+
+                },
+                atualizarXY(event){
+                    this.x = event.clientX
+                    this.y = event.clientY
+                },
+                parar(event){
+                    event.stopPropagation()
+                },
+                exibirAlerta(){
+                    alert('Ohh o gaiz')
+                }
+            }
+
+        })
+    </script>
+
+
+</body>
+</html>
