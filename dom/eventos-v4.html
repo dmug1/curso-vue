@@ -17,8 +17,9 @@
         <button v-on:click="somar(5)">Somar 1 </button>
          <p v-on:mousemove="atualizarXY">
              Mouse: {{ x }} e {{ y }}
-             <span>Parar aqui!!</span>
+             <span v-on:mousemove.stop>Parar aqui!!</span>
          </p>
+         <a v-on:click.prevent href="http://www.imugnae.com">Meu site</a>
     </div>
 
     <script>
@@ -37,6 +38,9 @@
                 atualizarXY(event){
                     this.x = event.clientX
                     this.y = event.clientY
+                },
+                parar(event){
+                    event.stopPropagation()
                 }
             }
 
