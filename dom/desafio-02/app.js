@@ -1,7 +1,7 @@
 new Vue({
     el: '#desafio',
     data: {
-        valor: ''
+        valor: '0'
     },
     methods:{
         exibirAlerta: function(){
