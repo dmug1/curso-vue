@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Vue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" href="css/style.css"> -->
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <p>{{ contador }}</p>
+        <button @click="somar()">Somar 1 </button>
+        <hr>
+        <input type='text' :value="contador">  
+         </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0
+            },
+            methods: {
+                somar() {
+                    this.contador++;
+
+                }
+            }
+
+        })
+    </script>
+
+
+</body>
+</html>
