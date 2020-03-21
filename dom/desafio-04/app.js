@@ -1,22 +1,14 @@
 new Vue({
 	el: '#desafio',
 	data: {
-		chosenEffect: ""
+		classe1: 'destaque',
+		perigo: true
 	},
 	methods: {
 		iniciarEfeito() {
 			setInterval(function(){
-				if (this.chosenEffect == ""){
-					this.chosenEffect = 'destaque'
-				} if(this.chosenEffect == "destaque"){
-					this.chosenEffect = 'encolher'
-				}else{
-					this,chosenEffect = 'destaque'
-				}
-				console.log('Classe escolhida foi: ' + this.chosenEffect);
-				return this.chosenEffect;
-			}, 1000);
-			
+				this.classe1 = this.classe1 == 'destaque' ? 'encolher' : 'destaque'
+				}, 1000)			
 		},
 
 		iniciarProgresso() {
