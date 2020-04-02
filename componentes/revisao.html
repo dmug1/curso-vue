@@ -7,17 +7,26 @@
 </head>
 <body>
     
-    <div id="app">
-        <contador></contador>
-        <contador></contador>
-        <contador></contador>
+    <div id="app1">
+        <contador1></contador1>
+        <contador1></contador1>
+        <contador1></contador1>
+    </div>
+
+<hr>
+    
+    <div id="app2">
+        <appContador></appContador>
+        <appContador></appContador>
+        <appContador></appContador>
     </div>
 
 <script>
-    Vue.component('contador',{
-        template: `
+    //registro global
+    const contador = {
+ template: `
             <div>
-            <h1> {{ contador }} </h1>
+            <span> {{ contador }} </span>
             <button @click="contador++"> Alterar titulo </button>
             <button @click="contador--">Destruir </button>
             </div>
@@ -25,10 +34,20 @@
         data(){
             return {contador: 0}
         }
-    })
+    }
     
     new Vue({
-        el: '#app'
+        el: '#app1',
+        components :{
+            contador1: contador,
+        }
+    })
+
+    new Vue({
+        el: '#app2',
+        components :{
+            appcontador: contador,
+        }
     })
 </script>
 
