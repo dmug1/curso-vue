@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+    <title>REvbisao</title>
+</head>
+<body>
+    
+    <div id="app">
+        <contador></contador>
+        <contador></contador>
+        <contador></contador>
+    </div>
+
+<script>
+    Vue.component('contador',{
+        template: `
+            <div>
+            <h1> {{ contador }} </h1>
+            <button @click="contador++"> Alterar titulo </button>
+            <button @click="contador--">Destruir </button>
+            </div>
+        `,
+        data(){
+            return {contador: 0}
+        }
+    })
+    
+    new Vue({
+        el: '#app'
+    })
+</script>
+
+</body>
+</html>
