@@ -1,6 +1,6 @@
 <template>
     <div class="contadores">
-        <app-contador v-for="c in 2" :key='c'>   </app-contador>
+        <app-contador v-for="c in 5" :key='c'>   </app-contador>
     </div>
 </template>
 
@@ -15,6 +15,8 @@ export default {
 
 </script>
 
-<style>
-
+<style scoped>
+    div {
+        border: 1px solid red;
+    }
 </style>
