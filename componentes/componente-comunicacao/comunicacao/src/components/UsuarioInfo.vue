@@ -4,6 +4,7 @@
         <p>Vários detalhes...</p>
         <p>Nome do usuario: <strong> {{ nome }}</strong></p>
         <button @click="reiniciarNome"> Reiniciar Nome </button>
+        <button @click="reiniciarFn">Reininicar nome (call back)</button>
     </div>
 </template>
 
