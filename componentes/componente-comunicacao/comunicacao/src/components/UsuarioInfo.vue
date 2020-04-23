@@ -2,7 +2,8 @@
     <div class="componente">
         <h2>As Informações de Usuário</h2>
         <p>Vários detalhes...</p>
-        <p>Nome do usuario: <strong> {{ nome }}</strong></p>
+        <p>Nome do usuario: <strong> {{ nome }}</strong></p>        
+        <p>Idade do usuario: <strong> {{ idade }}</strong></p>
         <button @click="reiniciarNome"> Reiniciar Nome </button>
         <button @click="reiniciarFn">Reininicar nome (call back)</button>
     </div>
@@ -18,7 +19,9 @@ export default {
             //default: function() {
             //    return Array(10).fill(0).join(',')
            // }
-        }
+        },
+        reiniciarFn: Function,
+        idade: Number
     },
     methods: {
         inverterNome(){return this.nome.split('').reverse().join('')
